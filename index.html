@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Music Player</title>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+   <div id="app" class="container mt-5">
+      <div class="card text-center shadow-sm">
+         <div class="card-body">
+            <h5 class="card-title p-3">Now Playing</h5>
+            <span id="alert">{{ alertMessage }}</span>
+            <img :src="currentSong.Poster" class="mx-auto d-block" id="poster">
+            <div>
+               <h5 class="card-title pt-4" id="songTitle">{{ currentSong.songTitle }}</h5>
+               <p id="singer">{{ currentSong.Singer }}</p>
+            </div>
+            <input type="range" class="form-range w-75 mt-2 mb-2" 
+                   v-model="currentTime" 
+                   :max="duration" 
+                   @input="seek" 
+                   id="customRange1">
+            <div class="d-flex justify-content-between w-75 m-auto" id="timeDisplay">
+               <div>{{ formattedCurrentTime }}</div>
+               <div>{{ formattedDuration }}</div>
+            </div>
+            <div class="mt-3 mb-3">
+               <button class="btn btn-outline-dark social-2 m-2" @click="previousSong">
+                  <i class="fa fa-caret-left"></i>
+               </button>
+               <button class="btn btn-outline-dark social-2 m-2" @click="togglePlay" id="playPauseButton">
+                  <i :class="isPlaying ? 'fa fa-pause' : 'fa fa-play'"></i>
+               </button>
+               <button class="btn btn-outline-dark social-2 m-2" @click="nextSong">
+                  <i class="fa fa-caret-right"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+      <footer class="d-flex justify-content-center p-5">
+         <span class="text-dark">Crafted with love by <a href="https://niyander.com/" class="text-decoration-none">Niyander</a> © 2024 </span>
+      </footer>
+   </div>
+
+<script src="./javascript/app.js"></script>
+</body>
+</html>

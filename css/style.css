@@ -1,0 +1,49 @@
+      body {
+        font-family: "Roboto", sans-serif;
+        background: #e7e6e6;
+      }
+
+      .container {
+        width: 450px;
+      }
+
+      .card {
+        border-radius: 30px;
+        height: 580px;
+      }
+
+      img {
+        height: 200px;
+        width: 300px;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+
+      /* Social Type two here */
+      .social-2 {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: #343a40;
+        border: 1px solid #343a40;
+      }
+
+      .social-2:hover {
+        background-color: #343a40;
+        color: #fff;
+      }
+
+      .fa {
+        font-size: 22px;
+        line-height: 1.6;
+        line-width: 1.6;
+      }
+
+      span {
+        color: red;
+      }
+
+      input[type="range"] {
+        accent-color: gray;
+      }
